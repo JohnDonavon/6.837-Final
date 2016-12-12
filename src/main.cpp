@@ -191,6 +191,7 @@ void initSystem()
     pendulumSystem = new PendulumSystem();
     // TODO customize initialization of cloth system
     clothSystem = new ClothSystem();
+    collisionSystem = new CollisionSystem();
 }
 
 void freeSystem() {
@@ -232,7 +233,7 @@ void drawSystem()
 //    simpleSystem->draw(gl);
 //    pendulumSystem->draw(gl);
 //    clothSystem->draw(gl);
-    collisionSystem->(gl);
+    collisionSystem->draw(gl);
 
     // set uniforms for floor
     gl.updateMaterial(FLOOR_COLOR);
