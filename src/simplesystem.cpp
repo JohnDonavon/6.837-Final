@@ -26,7 +26,7 @@ std::vector<Vector3f> SimpleSystem::evalF(std::vector<Vector3f> state)
 void SimpleSystem::draw(GLProgram& gl)
 {
 
-    // TODO 3.2: draw the particle. 
+    // TODO 3.2: draw the particle.
     //           we provide code that draws a static sphere.
     //           you should replace it with your own
     //           drawing code.

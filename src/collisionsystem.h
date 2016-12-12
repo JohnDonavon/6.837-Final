@@ -1,5 +1,5 @@
-#ifndef A3_COLLISIONSYSTEM_H
-#define A3_COLLISIONSYSTEM_H
+#ifndef COLLISIONSYSTEM_H
+#define COLLISIONSYSTEM_H
 
 #include <vector>
 
@@ -17,7 +17,6 @@ public:
     // draw is called once per frame
     void draw(GLProgram& ctx);
 
-    void constructCollisionParticles(int width, int height, std::vector<float> bottomLeftOfCloth);
 
     // inherits
     // std::vector<Vector3f> m_vVecState;
@@ -26,4 +25,4 @@ public:
 
 
 
-#endif //A3_COLLISIONSYSTEM_H
+#endif //COLLISIONSYSTEM_H
