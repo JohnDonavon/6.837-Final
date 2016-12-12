@@ -70,6 +70,6 @@ list (APPEND A3_HEADER
   src/simplesystem.h
 )
 
-add_executable(a3 ${A3_SRC} ${A3_HEADER})
+add_executable(a3 ${A3_SRC} ${A3_HEADER} src/collisionsystem.h src/collisionsystem.cpp)
 target_include_directories(a3 PUBLIC ${A3_INCLUDES})
 target_link_libraries(a3 ${A3_LIBS})

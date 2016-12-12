@@ -10,7 +10,10 @@ class CollisionSystem : public ParticleSystem
     ///ADD MORE FUNCTION AND FIELDS HERE
 public:
     CollisionSystem();
+    std::vector<float> masses;
+    std::vector<float> radii;
 
+    std::vector<int> particlesCollided(int particleIndex, std::vector<Vector3f> positions);
     // evalF is called by the integrator at least once per time step
     std::vector<Vector3f> evalF(std::vector<Vector3f> state) override;
 
