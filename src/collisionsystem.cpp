@@ -7,17 +7,25 @@ CollisionSystem::CollisionSystem()
 {
     // TODO 5. Initialize m_vVecState with particles.
     //Particle 0
-    m_vVecState.push_back(Vector3f(-2,0,0));
-    m_vVecState.push_back(Vector3f(2,0,0));
-    masses.push_back(2.0);
-    radii.push_back(.3);
-    objType.push_back("sphere");
-    //Particle 1
-    m_vVecState.push_back(Vector3f(2,0,0));
-    m_vVecState.push_back(Vector3f(-1,0,0));
-    masses.push_back(1.0);
-    radii.push_back(.2);
-    objType.push_back("sphere");
+//    m_vVecState.push_back(Vector3f(-2,0,0));
+//    m_vVecState.push_back(Vector3f(2,0,0));
+//    masses.push_back(2.0);
+//    radii.push_back(.3);
+//    objType.push_back("sphere");
+//    //Particle 1
+//    m_vVecState.push_back(Vector3f(2,0,0));
+//    m_vVecState.push_back(Vector3f(-1,0,0));
+//    masses.push_back(1.0);
+//    radii.push_back(.2);
+//    objType.push_back("sphere");
+    for (int i=0; i<5; i+=1){
+        m_vVecState.push_back(Vector3f(rand()%5, rand()%5, rand()%5));
+        m_vVecState.push_back(Vector3f(rand()%5, rand()%5, rand()%5));
+        masses.push_back(rand() % 10);
+        float radius = 1.0/(rand()%10+1);
+        radii.push_back(radius);
+        objType.push_back("sphere");
+    }
     //Particle 3 - Left Wall
     m_vVecState.push_back(Vector3f(-6,0,0));
     m_vVecState.push_back(Vector3f(0,0,0));
@@ -169,11 +177,16 @@ void CollisionSystem::draw(GLProgram& gl)
     std::vector<Vector3f> positions = plsExtract2(m_vVecState);
 
     for(unsigned i=0;i<positions.size();++i){
+
         if(objType[i] == "sphere"){
+            float colorMult = masses[i]/2.0;
             Vector3f pos = positions[i]; //YOUR PARTICLE POSITION
             gl.updateModelMatrix(Matrix4f::translation(pos));
+            const Vector3f PARTICLE_COLOR(0.4f, 0.7f, 1.0f);
+            gl.updateMaterial(colorMult*PARTICLE_COLOR);
             drawSphere(radii[i], 10, 10);
         }
+
     }
 
     // EXAMPLE: This shows you how to render lines to debug the spring system.
