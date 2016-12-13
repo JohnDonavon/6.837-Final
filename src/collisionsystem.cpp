@@ -9,7 +9,7 @@ CollisionSystem::CollisionSystem()
     //Particle 0
     m_vVecState.push_back(Vector3f(-2,0,0));
     m_vVecState.push_back(Vector3f(2,0,0));
-    masses.push_back(1.0);
+    masses.push_back(10.0);
     radii.push_back(.3);
     //Particle 1
     m_vVecState.push_back(Vector3f(2,0,0));
@@ -54,8 +54,12 @@ void CollisionSystem::detectAndReflect(){
                 float m2 = masses[j];
 
                 Vector3f unitNormal = (pos1 - pos2).normalized();
-                float vrel = Vector3f::dot((vel1 - vel2), unitNormal);
-                collision += vel1 - vrel * unitNormal;
+
+                float v1n = Vector3f::dot(unitNormal, vel1);
+                float v2n = Vector3f::dot(unitNormal, vel2);
+                float newV = (v1n*(m1 - m2) + 2*m2*v2n)/(m1+m2);
+
+                collision += newV * unitNormal;
                 m_vVecState[2*i+1] = collision;
             }
         }
