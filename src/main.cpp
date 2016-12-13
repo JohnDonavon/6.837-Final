@@ -301,7 +301,7 @@ int main(int argc, char** argv)
 
     camera.SetDimensions(600, 600);
     camera.SetPerspective(50);
-    camera.SetDistance(10);
+    camera.SetDistance(20);
 
     // Setup particle system
     initSystem();
