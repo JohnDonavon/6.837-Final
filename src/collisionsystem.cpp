@@ -19,45 +19,45 @@ CollisionSystem::CollisionSystem()
 //    radii.push_back(.2);
 //    objType.push_back("sphere");
     for (int i=0; i<5; i+=1){
-        m_vVecState.push_back(Vector3f(rand()%5, rand()%5, rand()%5));
-        m_vVecState.push_back(Vector3f(rand()%5, rand()%5, rand()%5));
+        m_vVecState.push_back(Vector3f(rand()%3, rand()%3, rand()%3));
+        m_vVecState.push_back(Vector3f(rand()%10, rand()%10, rand()%10));
         masses.push_back(rand() % 10);
-        float radius = 1.0/(rand()%10+1);
+        float radius = .2;//1.0/(rand()%10+1);
         radii.push_back(radius);
         objType.push_back("sphere");
     }
     //Particle 3 - Left Wall
-    m_vVecState.push_back(Vector3f(-6,0,0));
+    m_vVecState.push_back(Vector3f(-4,0,0));
     m_vVecState.push_back(Vector3f(0,0,0));
     masses.push_back(-1);
     radii.push_back(-1);
     objType.push_back("wall");
     //Particle 4 - Right Wall
-    m_vVecState.push_back(Vector3f(6,0,0));
+    m_vVecState.push_back(Vector3f(4,0,0));
     m_vVecState.push_back(Vector3f(0,0,0));
     masses.push_back(-1);
     radii.push_back(-1);
     objType.push_back("wall");
     //Particle 5 - Ceiling
-    m_vVecState.push_back(Vector3f(0,6,0));
+    m_vVecState.push_back(Vector3f(0,4,0));
     m_vVecState.push_back(Vector3f(0,0,0));
     masses.push_back(-1);
     radii.push_back(-1);
     objType.push_back("wall");
     //Particle 6 - Floor
-    m_vVecState.push_back(Vector3f(0,-6,0));
+    m_vVecState.push_back(Vector3f(0,-4,0));
     m_vVecState.push_back(Vector3f(0,0,0));
     masses.push_back(-1);
     radii.push_back(-1);
     objType.push_back("wall");
     //Particle 7 - Close wall
-    m_vVecState.push_back(Vector3f(0,0,6));
+    m_vVecState.push_back(Vector3f(0,0,4));
     m_vVecState.push_back(Vector3f(0,0,0));
     masses.push_back(-1);
     radii.push_back(-1);
     objType.push_back("wall");
     //Particle 8 - Far Wall
-    m_vVecState.push_back(Vector3f(0,0,-6));
+    m_vVecState.push_back(Vector3f(0,0,-4));
     m_vVecState.push_back(Vector3f(0,0,0));
     masses.push_back(-1);
     radii.push_back(-1);
