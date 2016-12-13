@@ -12,6 +12,7 @@ public:
     CollisionSystem();
     std::vector<float> masses;
     std::vector<float> radii;
+    std::vector<std::string> objType;
 
     void detectAndReflect() override;
     // evalF is called by the integrator at least once per time step
