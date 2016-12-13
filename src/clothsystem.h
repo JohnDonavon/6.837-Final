@@ -13,7 +13,7 @@ public:
 
     // evalF is called by the integrator at least once per time step
     std::vector<Vector3f> evalF(std::vector<Vector3f> state) override;
-
+    void detectAndReflect() override;
     // draw is called once per frame
     void draw(GLProgram& ctx);
 

@@ -207,7 +207,7 @@ std::vector<Vector3f> ClothSystem::evalF(std::vector<Vector3f> state)
     return f;
 
 }
-
+void ClothSystem::detectAndReflect() {}
 
 void ClothSystem::draw(GLProgram& gl)
 {

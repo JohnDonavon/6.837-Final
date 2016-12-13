@@ -21,7 +21,7 @@ std::vector<Vector3f> SimpleSystem::evalF(std::vector<Vector3f> state)
     }
     return f;
 }
-
+void SimpleSystem::detectAndReflect() {}
 // render the system (ie draw the particles)
 void SimpleSystem::draw(GLProgram& gl)
 {

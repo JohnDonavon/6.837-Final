@@ -101,7 +101,7 @@ std::vector<Vector3f> PendulumSystem::evalF(std::vector<Vector3f> state)
     }
     return f;
 }
-
+void PendulumSystem::detectAndReflect() {}
 // render the system (ie draw the particles)
 void PendulumSystem::draw(GLProgram& gl)
 {

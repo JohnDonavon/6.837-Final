@@ -15,7 +15,7 @@ public:
     // knowing which particular system it is.
     // Each ParticleSystem subclass must provide an implementation of evalF.
     std::vector<Vector3f> evalF(std::vector<Vector3f> state) override;
-
+    void detectAndReflect() override;
     // this is called from main.cpp when it's time to draw a new frame.
     void draw(GLProgram&);
 

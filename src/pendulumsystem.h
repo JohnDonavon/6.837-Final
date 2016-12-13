@@ -12,7 +12,7 @@ public:
 
     std::vector<Vector3f> evalF(std::vector<Vector3f> state) override;
     void draw(GLProgram&);
-
+    void detectAndReflect() override;
     // inherits 
     // std::vector<Vector3f> m_vVecState;
 
